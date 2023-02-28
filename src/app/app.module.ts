@@ -13,11 +13,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './component/home/home.component';
+import { ErrorComponent } from './component/error/error.component';
 
 
 const appRoute: Routes = [
   {path: "", component: HomeComponent},
-  {path: 'todo-app', component: DashboardComponent}
+  {path: 'todo-app', component: DashboardComponent},
+  {path: '**', component: ErrorComponent},
 ]
 
 @NgModule({
@@ -30,7 +32,8 @@ const appRoute: Routes = [
     HelloWorldInterpolationComponent,
     HelloWorldBindingsComponent,
     DashboardComponent,
-    HomeComponent
+    HomeComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,

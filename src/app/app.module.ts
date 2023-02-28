@@ -11,8 +11,14 @@ import { HelloWorldBindingsComponent } from './hello-world-bindings/hello-world-
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './component/home/home.component';
 
 
+const appRoute: Routes = [
+  {path: "", component: HomeComponent},
+  {path: 'todo-app', component: DashboardComponent}
+]
 
 @NgModule({
   declarations: [
@@ -23,12 +29,14 @@ import { HttpClientModule } from '@angular/common/http';
     HelloWorldDependencyInjectionComponent,
     HelloWorldInterpolationComponent,
     HelloWorldBindingsComponent,
-    DashboardComponent
+    DashboardComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoute)
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,6 +8,9 @@ import { HelloWorldNgIfComponent } from './hello-world-ngif/hello-world-ngif.com
 import { HelloWorldDependencyInjectionComponent } from './hello-world-di/hello-world-di.component';
 import { HelloWorldInterpolationComponent } from './hello-world-interpolation/hello-world-interpolation.component';
 import { HelloWorldBindingsComponent } from './hello-world-bindings/hello-world-bindings.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -19,10 +22,13 @@ import { HelloWorldBindingsComponent } from './hello-world-bindings/hello-world-
     HelloWorldNgIfComponent,
     HelloWorldDependencyInjectionComponent,
     HelloWorldInterpolationComponent,
-    HelloWorldBindingsComponent
+    HelloWorldBindingsComponent,
+    DashboardComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

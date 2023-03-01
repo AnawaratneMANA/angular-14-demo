@@ -1,0 +1,37 @@
+<div class="card bg-light p-3 d-flex flex-row justify-content-between">
+    <div class="m-2">
+        <p class="display-6 text-black ">Databinding in Angular</p>
+        <p class="font-italic text-danger">#</p>            
+    </div>
+    <div class="">
+        <a routerLink ="">
+            <button class="btn btn-outline-primary">Home</button>
+        </a>
+    </div>
+</div>
+
+<br>
+
+<h3  class="font-weight-bold">Bind to an attribute</h3>
+<p>{{ internalAttribute }}</p>
+
+<h3 class="font-weight-bold">Inline TS</h3>
+<p>{{ 12 + 5 }}</p>
+
+<h3 class="font-weight-bold">Method call</h3>
+<p>{{ getString() }}</p>
+
+<h3 class="font-weight-bold">Property binding</h3>
+<img [src]="imageSource" width="200px"> <br>
+
+<button [class]="buttonStyle">Property Binded Button</button>
+
+<h3 class="font-weight-bold">Event Binding</h3>
+<p class="text-danger"> This can be used to close buttons and input field, button events</p>
+Search: <input type="text" (input)="searchValue($event)"/>
+Search Term: <span>{{searchValueAttribute}}</span><br>
+
+<h3 class="font-weight-bold">Two way data binding</h3>
+<input type="text" [(ngModel)] = "searchValueAttribute"/>
+
+

@@ -1,0 +1,24 @@
+<div class="card bg-light p-3 d-flex flex-row justify-content-between">
+    <div class="m-2">
+        <p class="display-6 text-black ">Directives</p>
+        <p class="font-italic text-danger">Structural directives and Attribute Directives</p>            
+    </div>
+    <div class="">
+        <a routerLink ="">
+            <button class="btn btn-outline-primary">Home</button>
+        </a>
+    </div>
+</div>
+
+
+<h3 class="font-weight-bold">For Loop</h3>
+<div *ngFor="let item of [1,2,4]">
+    <span> Numer is : {{item}} </span>
+</div>
+
+<br>
+
+<h3 class="font-weight-bold">For Loop with an Array</h3>
+<div *ngFor="let item of products">
+    <span> Item is : {{item.name}} </span>
+</div>

@@ -14,11 +14,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './component/home/home.component';
 import { ErrorComponent } from './component/error/error.component';
+import { DataBindingComponent } from './component/data-binding/data-binding.component';
+import { DirectivesComponent } from './component/directives/directives.component';
 
 
 const appRoute: Routes = [
   {path: "", component: HomeComponent},
   {path: 'todo-app', component: DashboardComponent},
+  {path: 'data-binding', component: DataBindingComponent},
+  {path: 'directives', component: DirectivesComponent},
   {path: '**', component: ErrorComponent},
 ]
 
@@ -33,7 +37,9 @@ const appRoute: Routes = [
     HelloWorldBindingsComponent,
     DashboardComponent,
     HomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    DataBindingComponent,
+    DirectivesComponent
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,10 @@ import { HomeComponent } from './component/home/home.component';
 import { ErrorComponent } from './component/error/error.component';
 import { DataBindingComponent } from './component/data-binding/data-binding.component';
 import { DirectivesComponent } from './component/directives/directives.component';
+import { ProductHomeComponent } from './component/product/product-home/product-home.component';
+import { ProductSearchComponent } from './component/product/product-search/product-search.component';
+import { ProductDisplayComponent } from './component/product/product-display/product-display.component';
+import { ProductInsertComponent } from './component/product/product-insert/product-insert.component';
 
 
 const appRoute: Routes = [
@@ -23,6 +27,7 @@ const appRoute: Routes = [
   {path: 'todo-app', component: DashboardComponent},
   {path: 'data-binding', component: DataBindingComponent},
   {path: 'directives', component: DirectivesComponent},
+  {path: 'product', component: ProductHomeComponent},
   {path: '**', component: ErrorComponent},
 ]
 
@@ -39,7 +44,11 @@ const appRoute: Routes = [
     HomeComponent,
     ErrorComponent,
     DataBindingComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    ProductHomeComponent,
+    ProductSearchComponent,
+    ProductDisplayComponent,
+    ProductInsertComponent
   ],
   imports: [
     BrowserModule,

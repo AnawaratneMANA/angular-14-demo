@@ -1,1 +1,60 @@
-<p>product-insert works!</p>
+<div class="d-flex flex-row" >
+    <div class="background-color card p-3 container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+              <div id="user-data">
+                <p class="fw-bold">Insert Category</p>
+                <div class="form-group">
+                  <label for="username">Category Name</label>
+                  <input type="text" id="category" class="form-control" ngModel name="categoryName" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" class="form-control" ngModel name="email" required email>
+                </div>
+                <div class="form-group">
+                    <label for="email">Contact Number</label>
+                    <input type="email" id="contact" class="form-control" ngModel name="contactNumber" required>
+                  </div>
+              </div>
+              <button class="btn btn-primary" type="submit">Insert</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    
+      <div class="background-color card ms-3 p-3 container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <form (ngSubmit)="onCategroyFormSubmit()" #category="ngForm">
+              <div id="user-data">
+                <p class="fw-bold">Insert Products</p>
+                <div class="form-group">
+                  <label for="username">Category Name</label>
+                  <input type="text" id="username" class="form-control" ngModel name="userName" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Product Name</label>
+                  <input type="email" id="email" class="form-control" ngModel name="productName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Price</label>
+                    <input type="email" id="email" class="form-control" ngModel name="price" required email>
+                  </div>
+              </div>
+              <div class="form-group">
+                <label for="secret">Product Category</label>
+                <select id="secret" class="form-control" ngModel name="category" required>
+                  <option value="pet">1 - CategoryName</option>
+                  <option value="teacher">2 - CategoryName</option>
+                </select>
+              </div>
+              <button class="btn btn-primary" type="submit">Insert</button>
+            </form>
+          </div>
+        </div>
+      </div>
+</div>
+
+  

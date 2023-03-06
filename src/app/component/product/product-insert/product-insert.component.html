@@ -3,16 +3,16 @@
         <div class="row">
           <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
             <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-              <div id="productFormId">
+              <div id="productFormId" ngModelGroup="categoryGroup" #categoryGroup="ngModelGroup">
                 <p class="fw-bold">Insert Category</p>
                 <div class="form-group">
-                  <label for="username">Category Name</label>
+                  <label for="category">Category Name</label>
                   <input type="text" id="category" class="form-control" ngModel name="categoryName" required>
                 </div>
                 <div class="form-group">
                   <label for="email_1">Email</label>
                   <input type="email" id="email_1" class="form-control" ngModel name="email" required email #email="ngModel">
-                  <span class="text-danger help-block" *ngIf="!email.valid && email.touched">Please enter a valid email</span>
+                  <span class="text-danger help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
                 </div>
                 <div class="form-group">
                     <label for="contact">Contact Number</label>
@@ -21,6 +21,7 @@
               </div>
               <button [disabled]="!f.valid" class="btn btn-primary" type="submit">Insert</button>
             </form>
+            <span class="text-danger help-block" *ngIf="!categoryGroup.valid && categoryGroup.touched">Invalid category data!</span>
           </div>
         </div>
       </div>

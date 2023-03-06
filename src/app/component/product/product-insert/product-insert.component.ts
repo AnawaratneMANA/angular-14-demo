@@ -33,6 +33,7 @@ export class ProductInsertComponent {
     this.category.email = event.value.categoryGroup.email;
     this.category.contactNumber = event.value.categoryGroup.contactNumber;
     console.log(this.category)
+    event.reset();
   }
 
   // Bind the form to ts file - method 2
@@ -41,5 +42,6 @@ export class ProductInsertComponent {
     this.product.price = this.productForm?.value.productGroup.price;
     this.product.category = this.productForm?.value.category;
     console.log(this.product)
+    this.productForm?.reset();
   }
 }

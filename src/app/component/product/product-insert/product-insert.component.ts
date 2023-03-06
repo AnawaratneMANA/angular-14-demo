@@ -10,17 +10,36 @@ export class ProductInsertComponent {
 
 
   // Bind the form to ts file - method 1
-  @ViewChild('category') categoryForm: NgForm | undefined;
+  @ViewChild('product') productForm: NgForm | undefined;
   defaultProductCategory = "category2";
+  category = {
+    categoryName: '',
+    email:'',
+    contactNumber:''
+  }
+
+  product = {
+    productName:'',
+    price:'',
+    category:''
+  }
+
   constructor(){
       // Nothing here!
   }
+  // Bind the form to ts file - method 1
   onSubmit(event : NgForm){
-    console.log(event);
+    this.category.categoryName = event.value.categoryGroup.categoryName;
+    this.category.email = event.value.categoryGroup.email;
+    this.category.contactNumber = event.value.categoryGroup.contactNumber;
+    console.log(this.category)
   }
 
   // Bind the form to ts file - method 2
-  onCategroyFormSubmit(){
-    console.log(this.categoryForm);
+  onProductFormSubmit(){
+    this.product.productName = this.productForm?.value.productGroup.productName;
+    this.product.price = this.productForm?.value.productGroup.price;
+    this.product.category = this.productForm?.value.category;
+    console.log(this.product)
   }
 }

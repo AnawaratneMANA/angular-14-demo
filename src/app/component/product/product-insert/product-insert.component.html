@@ -29,8 +29,8 @@
       <div class="background-color card ms-3 p-3 container">
         <div class="row">
           <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-            <form (ngSubmit)="onCategroyFormSubmit()" #category="ngForm">
-              <div id="categoryFormId">
+            <form (ngSubmit)="onProductFormSubmit()" #product="ngForm">
+              <div id="categoryFormId" ngModelGroup="productGroup" #productGroup="ngModelGroup">
                 <p class="fw-bold">Insert Products</p>
                 <div class="form-group">
                   <label for="productName">Product Name</label>
@@ -38,18 +38,19 @@
                 </div>
                 <div class="form-group">
                     <label for="email_2">Price</label>
-                    <input type="email" id="email_2" class="form-control" ngModel name="price" required email>
+                    <input type="email" id="email_2" class="form-control" ngModel name="price" required>
                   </div>
               </div>
               <div class="form-group">
-                <label for="secret">Product Category</label>
-                <select id="secret" class="form-control" [ngModel]="defaultProductCategory" name="category" required>
+                <label for="category">Product Category</label>
+                <select id="category_options" class="form-control" [ngModel]="defaultProductCategory" name="category">
                   <option value="category1">1 - CategoryName</option>
                   <option value="category2">2 - CategoryName</option>
                 </select>
               </div>
-              <button [disabled]="!f.valid" class="btn btn-primary" type="submit">Insert</button>
+              <button [disabled]="!product.valid" class="btn btn-primary" type="submit">Insert</button>
             </form>
+            <span class="text-danger help-block" *ngIf="!productGroup.valid && productGroup.touched">Invalid product data!</span>
           </div>
         </div>
       </div>

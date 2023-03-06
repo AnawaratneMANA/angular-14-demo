@@ -8,9 +8,10 @@ import { NgForm } from '@angular/forms';
 })
 export class ProductInsertComponent {
 
-  
+
   // Bind the form to ts file - method 1
   @ViewChild('category') categoryForm: NgForm | undefined;
+  defaultProductCategory = "category2";
   constructor(){
       // Nothing here!
   }

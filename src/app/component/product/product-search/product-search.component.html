@@ -1,17 +1,17 @@
 <div class="card background-color-gray-1 mt-3 p-3 container">
     <div class="row">
       <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-        <form>
+        <form #search="ngForm">
           <div class="form-group">
             <label for="search"><p class="fw-bold">Secret Category</p></label>
-            <select id="search" class="form-control" [ngModel]="defaultProductCategory" name="category" required>
+            <select id="search" class="form-control" [ngModel]="defaultProductCategory" name="searchId" required>
               <option [ngValue]="item['id']" *ngFor="let item of listOfProducts">{{item['productCategoryName']}}</option>
             </select>
           </div>
-          <button class="btn btn-primary" type="submit">Search</button>
+          <button name="searchButton" class="btn btn-primary" type="submit" (click)="onSearch()">Search</button>
         </form>
       </div>
     </div>
   </div>
 
-<app-product-display></app-product-display>
+<app-product-display [itemId]="selectedId"></app-product-display>

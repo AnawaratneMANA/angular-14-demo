@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-product-search',
@@ -13,8 +14,12 @@ export class ProductSearchComponent {
     this.fetchAllCategories();
   }
 
+  @ViewChild('search') searchForm: NgForm | undefined;
+
   listOfProducts = [];
   defaultProductCategory = "1"
+
+  selectedId = "";
   fetchAllCategories(){
     this.http.get(
       "http://localhost:8080/api/v2/prod/prod-category",
@@ -33,4 +38,8 @@ export class ProductSearchComponent {
     }
   }
 
+  onSearch(){
+    console.log(this.searchForm?.value.searchId);
+    this.selectedId = this.searchForm?.value.searchId;
+  }
 }

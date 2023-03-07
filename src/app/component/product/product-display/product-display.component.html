@@ -6,23 +6,17 @@
             <thead>
               <tr>
                 <th scope="col">ID</th>
-                <th scope="col">Category Name</th>
                 <th scope="col">Product Name</th>
+                <th scope="col">Product Category Name</th>
                 <th scope="col">Price</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
+              <tr *ngFor="let item of listOfProducts">
+                <th scope="row">{{item['id']}}</th>
+                <td>{{item['productName']}}</td>
+                <td>{{item['productCategory']['productCategoryName']}}</td>
+                <td>{{item['price']}}</td>
               </tr>
             </tbody>
           </table>

@@ -3,10 +3,9 @@
       <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
         <form>
           <div class="form-group">
-            <label for="secret"><p class="fw-bold">Secret Category</p></label>
-            <select id="secret" class="form-control">
-              <option value="pet">1 - CategoryName</option>
-              <option value="teacher">2 - CategoryName</option>
+            <label for="search"><p class="fw-bold">Secret Category</p></label>
+            <select id="search" class="form-control" [ngModel]="defaultProductCategory" name="category" required>
+              <option [ngValue]="item['id']" *ngFor="let item of listOfProducts">{{item['productCategoryName']}}</option>
             </select>
           </div>
           <button class="btn btn-primary" type="submit">Search</button>
@@ -14,5 +13,5 @@
       </div>
     </div>
   </div>
-  
+
 <app-product-display></app-product-display>

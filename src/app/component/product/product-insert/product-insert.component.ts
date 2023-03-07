@@ -24,7 +24,9 @@ export class ProductInsertComponent {
   product = {
     productName:'',
     price:'',
-    category:''
+    productCategory: {
+      id: ""
+    }
   }
 
   constructor(private http: HttpClient){
@@ -51,8 +53,16 @@ export class ProductInsertComponent {
   onProductFormSubmit(){
     this.product.productName = this.productForm?.value.productGroup.productName;
     this.product.price = this.productForm?.value.productGroup.price;
-    this.product.category = this.productForm?.value.category;
+    this.product.productCategory.id = this.productForm?.value.category;
     console.log(this.product)
+
+    this.http.post(
+      "http://localhost:8080/api/v2/prod/prod",
+      this.product,
+    ).subscribe( response => {
+      console.log(response)
+    })
+
     this.productForm?.reset();
   }
 
@@ -72,9 +82,5 @@ export class ProductInsertComponent {
     } else {
       return {};
     }
-  }
-
-  getItemName(object: any){
-
   }
 }
